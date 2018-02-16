@@ -6,7 +6,7 @@ public class GuessTheNumber {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int number = random.nextInt(100) + 1;
+        int number = random.nextInt(99) + 1;
         int numberOfGuesses=0;
 
         System.out.println("Guess a number between 1 and 100!");
