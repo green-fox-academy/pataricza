@@ -4,14 +4,15 @@ public class ParametricAverage {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
+        int theSum = 0;
+        int theNumber = 0;
+
         System.out.println("How many numbers do you want me to calculate with?");
         int numberOFNumbers = scanner.nextInt();
 
-        int theSum = 0;
-
         for(int x = 0; x < numberOFNumbers; x++){
             System.out.println("Add the " + (x+1) + ". number!");
-            int theNumber = scanner.nextInt();
+            theNumber = scanner.nextInt();
             theSum = theSum + theNumber;
         }
 
