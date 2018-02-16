@@ -29,7 +29,7 @@ public class GuessTheNumber {
             numberOfGuesses++;
         }
         numberOfGuesses++;
-        System.out.println("You've found the number " + number + " from " + numberOfGuesses + " guesses. ");
+        System.out.println("You've found the number " + number + " in " + numberOfGuesses + " tries. ");
     }
 }
 
