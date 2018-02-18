@@ -4,19 +4,18 @@ public class CountFromTo {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please add a number: ");
-        int input1 = scanner.nextInt();
-        System.out.println("Please add another number: ");
-        int input2 = scanner.nextInt();
+        int input1 = 0;
+        int input2 = 0;
 
         while(input2 <= input1){
-            System.out.println("\n###The second number should be bigger!###\n");
 
             System.out.println("Please add a number: ");
             input1 = scanner.nextInt();
 
             System.out.println("Please add another number: ");
             input2 = scanner.nextInt();
+
+            if(input2 <= input1){System.out.println("\n###The second number should be bigger!###\n");}
         }
         System.out.println("");
         while(input1<input2) {

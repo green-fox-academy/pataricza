@@ -1,6 +1,6 @@
 public class PrintEven {
     public static void main(String[] args){
-        for(int x=1; x<501; x++){
+        for(int x=0; x<501; x++){
             if(x % 2 == 0){
                 System.out.println(x);
             }
