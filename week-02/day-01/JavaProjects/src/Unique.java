@@ -10,10 +10,10 @@ public class Unique {
 
         //Makes an empty array in the length it will be needed later.
 
-        int checker2 = sortThis.length*2;
+        int checker2 = sortThis.length;
 
         for (int g = 0; g < sortThis.length; g++) {
-            for (int h = g; h < sortThis.length; h++) {
+            for (int h = g+1; h < sortThis.length; h++) {
                 if(sortThis[g] == sortThis[h]){
                     checker2--;
                 }
