@@ -27,6 +27,7 @@ public class Matchmaking{
             for (int i = 0; i > boys.size(); i++) {
                 pairs.add(girls.get(i));
                 pairs.add(boys.get(i));
+                counter++;
             }
             pairs.add("And " + girls.get(counter) + " has no pair :( ");
         }
