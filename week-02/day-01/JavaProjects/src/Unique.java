@@ -20,8 +20,7 @@ public class Unique {
             }
         }
 
-        int[] sortedArray;
-        sortedArray = new int[checker2];
+        int[] sortedArray = new int[checker2];
 
         //Sorts the input array and fills up with teh result the sortedArray.
 
