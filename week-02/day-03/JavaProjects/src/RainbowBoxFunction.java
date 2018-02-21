@@ -13,7 +13,7 @@ public class RainbowBoxFunction {
         int rgb3 = (int) (Math.random() * 256);
         Color color = (new Color(rgb1, rgb2, rgb3));
 
-        concentricSquares(180,color, graphics);
+        concentricSquares(400,color, graphics);
 
 
         // Create a square drawing function that takes 2 parameters:
