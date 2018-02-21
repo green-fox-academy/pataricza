@@ -5,6 +5,8 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class HorizontalLine {
+
+
     public static void mainDraw(Graphics graphics){
         fiftyLong(50,61, graphics);
         fiftyLong(83,300, graphics);
