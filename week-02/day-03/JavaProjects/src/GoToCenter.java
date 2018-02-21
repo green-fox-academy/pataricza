@@ -4,17 +4,21 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Diagonals {
+public class GoToCenter {
     public static void mainDraw(Graphics graphics){
+
+        drawToCenter(30,30, graphics);
+        drawToCenter(400,30, graphics);
+        drawToCenter(500,300, graphics);
+        // Create a line drawing function that takes 2 parameters:
+        // The x and y coordinates of the line's starting point
+        // and draws a line from that point to the center of the canvas.
+        // Draw 3 lines with that function. Use loop for that.
+    }
+
+    public static void drawToCenter(int startingX, int startingY, Graphics graphics){
         graphics.setColor(Color.red);
-        graphics.drawLine(640,0,0,480);
-        graphics.setColor(Color.green);
-        graphics.drawLine(0,0,640,480);
-
-
-
-
-
+        graphics.drawLine(startingX, startingY,320,240);
     }
 
     // Don't touch the code below
