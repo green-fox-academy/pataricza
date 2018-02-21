@@ -13,7 +13,7 @@ public class RainbowBoxFunction {
         int rgb3 = (int) (Math.random() * 256);
         Color color = (new Color(rgb1, rgb2, rgb3));
 
-        concentricSquares(100,color, graphics);
+        concentricSquares(180,color, graphics);
 
 
         // Create a square drawing function that takes 2 parameters:
@@ -23,15 +23,17 @@ public class RainbowBoxFunction {
     }
 
     public static void concentricSquares(int size, Color color, Graphics graphics){
+            int limiter = 1;
        for (int i = WIDTH-1; i > 0; i--) {
             int rgb1 = (int) (Math.random() * 256);
             int rgb2 = (int) (Math.random() * 256);
             int rgb3 = (int) (Math.random() * 256);
             graphics.setColor(new Color(rgb1, rgb2, rgb3));
-            graphics.fillRect(WIDTH-i,HEIGHT-i, i, i);
+            graphics.fillRect(WIDTH-i,HEIGHT-i, i-limiter, i-limiter);
+            limiter++;
         }
-       /* graphics.setColor(color);
-        graphics.fillRect(WIDTH/2-size,HEIGHT/2-size, size,size); */
+        graphics.setColor(color);
+        graphics.fillRect(WIDTH/2-size/2,HEIGHT/2-size/2, size,size);
     }
 
 
