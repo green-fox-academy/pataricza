@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Unique2 {
     public static void main(String[] args) {
 
-        int[] startingArray = {1, 11, 34, 11, 52, 61, 1, 34};
+        int[] startingArray = {1, 11, 34, 1, 52, 61, 1, 34, 55, 55, 1, 89, 34, 66};
         //  Create a function that takes a list of numbers as a parameter
         //  Returns a list of numbers where every number in the list occurs only once
 
@@ -14,20 +14,24 @@ public class Unique2 {
 
     public static int[] unique(int[] uniqueThis){
 
-        int[] temp = {uniqueThis[0]};
+        int[] temp = new int[uniqueThis.length];
+        int itemcounter = 0;
 
-        for (int j = 1; j < uniqueThis.length; j++) {
-            boolean isItIn = false;
-            for (int i = 0; i < temp.length; i++) {
-                if(uniqueThis[j] != temp[i]){
-                    isItIn = true;
+        for (int i = 0; i < uniqueThis.length; i++) {
+            boolean checker = true;
+            for (int j = 0; j < temp.length; j++) {
+                if(uniqueThis[i] == temp[j]){
+                    checker = false;
                 }
             }
-            if(isItIn){
-                temp = Arrays.copyOf(temp, temp.length + 1);
-                temp[temp.length-1] = uniqueThis[j];
+            if(checker){
+            temp[itemcounter] = uniqueThis[i];
+            itemcounter++;
             }
         }
+
+        temp = Arrays.copyOf(temp, itemcounter);
+
         return temp;
     }
 
