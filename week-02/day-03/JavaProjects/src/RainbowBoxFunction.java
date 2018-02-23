@@ -32,8 +32,8 @@ public class RainbowBoxFunction {
             graphics.fillRect(WIDTH-i,HEIGHT-i, i-limiter, i-limiter);
             limiter++;
         }
-        graphics.setColor(color);
-        graphics.fillRect(WIDTH/2-size/2,HEIGHT/2-size/2, size,size);
+        /*graphics.setColor(color);
+        graphics.fillRect(WIDTH/2-size/2,HEIGHT/2-size/2, size,size);*/
     }
 
 
