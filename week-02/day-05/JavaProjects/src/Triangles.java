@@ -13,10 +13,10 @@ public class Triangles {
 
         graphics.drawPolygon(xPoints , yPoints, numberOfPoints);
 
-        int[] xPoints2 = {144, 301, 458};
+      //  int[] xPoints2 = {144, 301, 458};
 
-        graphics.drawPolygon(xPoints2 , yPoints, numberOfPoints);
-        graphics.drawLine(xPoints2[0],yPoints[0]-1, xPoints2[2],yPoints[2]-1);
+     //   graphics.drawPolygon(xPoints2 , yPoints, numberOfPoints);
+     //   graphics.drawLine(xPoints2[0],yPoints[0]-1, xPoints2[2],yPoints[2]-1);
 
         int lineX1 = 151;
         int lineX2 = 449;
@@ -25,11 +25,11 @@ public class Triangles {
 
         for (int i = 0; i < 20; i++) {
             graphics.drawLine(lineX1, lineY, lineX2, lineY);
-            graphics.drawLine(lineX1, lineY-1, lineX2, lineY-1);
+         //   graphics.drawLine(lineX1, lineY-1, lineX2, lineY-1);
             graphics.drawLine(lineX2, lineY, xPoints[2]-lineXCounter, yPoints[2]);
-            graphics.drawLine(lineX2+1, lineY, xPoints2[2]-lineXCounter, yPoints[2]);
+         //   graphics.drawLine(lineX2+1, lineY, xPoints2[2]-lineXCounter, yPoints[2]);
             graphics.drawLine(lineX1, lineY, xPoints[0]+lineXCounter, yPoints[0]);
-            graphics.drawLine(lineX1+1, lineY, xPoints2[0]+lineXCounter, yPoints[0]);
+         //   graphics.drawLine(lineX1+1, lineY, xPoints2[0]+lineXCounter, yPoints[0]);
             lineXCounter += 15;
             lineY -= 13;
             if(i % 2 == 0) {

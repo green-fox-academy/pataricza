@@ -13,6 +13,7 @@ public class SuperHexagon {
 
         int[] tempxCoordinates = new int[6];
         int[] tempyCoordinates = new int[6];
+        int hexaCounter = 0;
 
 
        for (int i = 0; i < 7; i++) {
@@ -21,18 +22,21 @@ public class SuperHexagon {
                 tempxCoordinates[j] = xCoordinates[j];
                 tempyCoordinates[j] = yCoordinates[j];
             }
-           for (int k = 0; k < 3; k++) {
+           if(i > 3){hexaCounter++;}
+           for (int k = hexaCounter; k < 3; k++) {
                for (int p = 0; p < 6; p++) {
                    tempyCoordinates[p] += 19;
                    tempxCoordinates[p] += 33;
                }
                graphics.drawPolygon(tempxCoordinates, tempyCoordinates, numberOfPoints);
            }
-           for (int z = 0; z < 6; z++) {
-               tempyCoordinates[z] -= 3*19;
-               tempxCoordinates[z] -= 3*33;
+           for (int v = hexaCounter; v < 3; v++) {
+               for (int z = 0; z < 6; z++) {
+                   tempyCoordinates[z] -= 19;
+                   tempxCoordinates[z] -= 33;
+               }
            }
-           for (int f = 0; f < 3; f++) {
+           for (int f = hexaCounter; f < 3; f++) {
                for (int g = 0; g < 6; g++) {
                    tempyCoordinates[g] += 19;
                    tempxCoordinates[g] -= 33;
