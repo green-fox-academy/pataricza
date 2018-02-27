@@ -24,7 +24,7 @@ public class TicTacToe {
   private static String ticTacResult(String result) {
     Path theResultAsPath = Paths.get(result);
     ArrayList<String> lines = new ArrayList<>();
-    String result = "";
+    String results = "";
     try {
       for (String line : Files.readAllLines(theResultAsPath)) {
         lines.add(line);
@@ -35,13 +35,41 @@ public class TicTacToe {
 
     for (int i = 0; i < 3; i++) {
         if (lines.get(i).charAt(0) == 'O' && lines.get(i).charAt(1) == 'O' && lines.get(i).charAt(2) == 'O') {
-          result = "O has won.";
+          results = "O has won.";
+          i = 3;
         }
-        else if (lines.get(i).charAt(0) == 'O' && lines.get(i).charAt(1) == 'O' && lines.get(i).charAt(2) == 'O') {
-           result = "O has won.";
+        else if (lines.get(0).charAt(i) == 'O' && lines.get(1).charAt(i) == 'O' && lines.get(2).charAt(i) == 'O') {
+           results = "O has won.";
+           i = 3;
+        }
+        else if (lines.get(i).charAt(0) == 'X' && lines.get(i).charAt(1) == 'X' && lines.get(i).charAt(2) == 'X') {
+        results = "X has won.";
+          i = 3;
+        }
+        else if (lines.get(0).charAt(i) == 'X' && lines.get(1).charAt(i) == 'X' && lines.get(2).charAt(i) == 'X') {
+          results = "X has won.";
+          i = 3;
+        }
+        else if (lines.get(0).charAt(0) == 'X' && lines.get(1).charAt(1) == 'X' && lines.get(2).charAt(2) == 'X') {
+          results = "X has won.";
+          i = 3;
+        }
+        else if (lines.get(0).charAt(2) == 'X' && lines.get(1).charAt(1) == 'X' && lines.get(2).charAt(0) == 'X') {
+          results = "X has won.";
+          i = 3;
+        }
+        else if (lines.get(0).charAt(0) == 'O' && lines.get(1).charAt(1) == 'O' && lines.get(2).charAt(2) == 'O') {
+          results = "O has won.";
+          i = 3;
+        }
+        else if (lines.get(0).charAt(2) == 'O' && lines.get(1).charAt(1) == 'O' && lines.get(2).charAt(0) == 'O') {
+          results = "O has won.";
+          i = 3;
+        } else {
+          results = "Draw.";
         }
     }
 
-    return result;
+    return results;
     }
 }
