@@ -21,16 +21,27 @@ public class TicTacToe {
     // should print draw
   }
 
-  private static ArrayList<String> ticTacResult(String result) {
-    Path theResultAsPAth = Paths.get(result);
-    ArrayList<String> results = new ArrayList<>();
+  private static String ticTacResult(String result) {
+    Path theResultAsPath = Paths.get(result);
+    ArrayList<String> lines = new ArrayList<>();
+    String result = "";
     try {
-      for (String line : Files.readAllLines(theResultAsPAth)) {
-        results.add(line);
+      for (String line : Files.readAllLines(theResultAsPath)) {
+        lines.add(line);
       }
       } catch (Exception e) {
         System.out.println("No ongoing Tic-Tac-To match");
       }
-    return results;
+
+    for (int i = 0; i < 3; i++) {
+        if (lines.get(i).charAt(0) == 'O' && lines.get(i).charAt(1) == 'O' && lines.get(i).charAt(2) == 'O') {
+          result = "O has won.";
+        }
+        else if (lines.get(i).charAt(0) == 'O' && lines.get(i).charAt(1) == 'O' && lines.get(i).charAt(2) == 'O') {
+           result = "O has won.";
+        }
+    }
+
+    return result;
     }
 }
