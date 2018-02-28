@@ -6,6 +6,8 @@ public class PostItMain {
     PostIt postIt2 = new PostIt("pink", "black", "Awesome");
     PostIt postIt3 = new PostIt("yellow", "green", "Superb!");
 
+    postIt1.setBackgroundColor("white");
+
 
     System.out.println(postIt1.toString());
     System.out.println(postIt2.toString());

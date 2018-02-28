@@ -12,6 +12,10 @@ public class PostIt {
     this.textColor = textColor;
   }
 
+  public void setBackgroundColor(String backgroundColor) {
+    this.backgroundColor = backgroundColor;
+  }
+
   @Override
   public String toString() {
     return "postit.PostIt{" +
