@@ -29,4 +29,12 @@ public class SharpieSet {
     System.out.println(usableCounter);
   }
 
+  public void removeTrash () {
+    for (int i = getSharpieSet().size(); i > 0 ; i--) {
+      if (getSharpieSet().get(i-1).getInkAmount() == 0) {
+        getSharpieSet().remove(i-1);
+      }
+    }
+  }
+
 }

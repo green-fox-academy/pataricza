@@ -6,7 +6,12 @@ public class Sharpie {
   private float width;
   private float inkAmount;
 
-  public Sharpie(String color, float width) {
+  public Sharpie () {
+    color = "black";
+    inkAmount = 0;
+  }
+
+  public Sharpie (String color, float width) {
     this.color = color;
     this.width = width;
     inkAmount = 100;
