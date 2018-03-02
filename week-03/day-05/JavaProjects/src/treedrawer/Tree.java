@@ -20,7 +20,7 @@ public class Tree {
     if (depth == 0) return;
     int x2 = x1 + (int) (Math.cos(Math.toRadians(angle)) * depth * 9.0);
     int y2 = y1 + (int) (Math.sin(Math.toRadians(angle)) * depth * 9.0);
-    g.setColor(Color.getHSBColor((float)(Math.random() * 360),100,30));
+    g.setColor(Color.getHSBColor((float)(Math.random() * 360),100,50));
     g.drawLine(x1, y1, x2, y2);
     drawTree(g, x2, y2, angle - 25, depth - 1);
     drawTree(g, x2, y2, angle, depth - 1);
