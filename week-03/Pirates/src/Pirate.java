@@ -3,15 +3,15 @@ import java.util.Random;
 public class Pirate {
 
   private String name;
-  private boolean drunk;
   private boolean sleep;
   private boolean dead;
   private int drunkLevel;
 
-  public Pirate () {
-
+  public Pirate() {
     name = NameGenerator();
-
+    sleep = false;
+    dead = false;
+    drunkLevel = 0;
   }
 
   public static String NameGenerator() {
@@ -33,5 +33,45 @@ public class Pirate {
           Middle[rand.nextInt(Middle.length)]+
           End[rand.nextInt(End.length)];
 
+  }
+
+  public void drinkSomeRum() {
+    if (dead) {
+      System.out.println("Dead pirates don't drink rum.");
+    } else {
+      drunkLevel += (1 + (Math.random() * 4));
     }
+  }
+
+  public void howsItGoingMate() {
+    if (dead) {
+      System.out.println("Dead pirates don't tell tales.");
+    }
+    else if (drunkLevel > 4) {
+      System.out.println("Pour me anudder!");
+    } else {
+      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+      sleep = true;
+    }
+  }
+
+  public void sleep() {
+    sleep = true;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public boolean isSleep() {
+    return sleep;
+  }
+
+  public boolean isDead() {
+    return dead;
+  }
+
+  public int getDrunkLevel() {
+    return drunkLevel;
+  }
 }
