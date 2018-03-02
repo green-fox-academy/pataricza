@@ -6,12 +6,14 @@ public class Pirate {
   private boolean sleep;
   private boolean dead;
   private int drunkLevel;
+  private boolean captain;
 
   public Pirate() {
     name = NameGenerator();
     sleep = false;
     dead = false;
     drunkLevel = 0;
+    captain = false;
   }
 
   public static String NameGenerator() {

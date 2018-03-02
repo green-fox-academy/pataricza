@@ -8,9 +8,9 @@ public class Main {
 
     pirate1.brawl(pirate2);
 
-    System.out.println();
+    System.out.println(pirate2.isDead());
 
-    System.out.println(pirate1.getName());
-    System.out.println(pirate1.getDrunkLevel());
+    // System.out.println(pirate1.getName());
+    // System.out.println(pirate1.getDrunkLevel());
   }
 }
