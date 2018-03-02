@@ -56,7 +56,29 @@ public class Pirate {
   }
 
   public void sleep() {
-    sleep = true;
+    if (dead) {
+      System.out.println("Sure the pirate is sleeping - forever.");
+    } else {
+      sleep = true;
+    }
+  }
+
+  public void die() {
+    dead = true;
+  }
+
+  public void brawl (Pirate enemy) {
+    int whatHappens = (int) (1 + (Math.random() * 3));
+    if (enemy.dead) {
+      System.out.println("I'm a pirate not a bastard, I won't beat a dead man!");
+    } else if (whatHappens == 1) {
+      enemy.die();
+    } else if (whatHappens == 2) {
+      die();
+    } else {
+      enemy.sleep();
+      sleep();
+    }
   }
 
   public String getName() {
