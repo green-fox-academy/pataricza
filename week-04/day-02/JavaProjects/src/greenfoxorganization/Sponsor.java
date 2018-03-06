@@ -18,7 +18,7 @@ public class Sponsor extends Person{
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm " + getName() + ", a " + getAge() + "year old " + getGender() +
+    System.out.println("Hi, I'm " + getName() + ", a " + getAge() + " year old " + getGender() +
         " who represents " + company + " and hired " + hiredStudents + " students so far.");
   }
 
@@ -27,6 +27,6 @@ public class Sponsor extends Person{
   }
 
   public void getGoal() {
-    System.out.println("Hire brilliant junior software developers.");
+    System.out.println("My goal is:  Hire brilliant junior software developers.");
   }
 }
