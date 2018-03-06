@@ -1,7 +1,5 @@
 package thegardenapplication;
 
-import java.util.ArrayList;
-
 public class Plant {
 
   private String color;
@@ -18,5 +16,9 @@ public class Plant {
 
   public String getColor() {
     return color;
+  }
+
+  public void setWaterLevel(double waterLevel) {
+    this.waterLevel = waterLevel;
   }
 }

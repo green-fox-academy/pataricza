@@ -15,5 +15,16 @@ public class TheGardenMain {
     myGarden.addPlants(orange);
 
     myGarden.waterInfo(myGarden.getGarden());
+    System.out.println("");
+
+    myGarden.waterGarden(40, myGarden.getGarden());
+
+    myGarden.waterInfo(myGarden.getGarden());
+    System.out.println("");
+
+    myGarden.waterGarden(70, myGarden.getGarden());
+
+    myGarden.waterInfo(myGarden.getGarden());
+    System.out.println("");
   }
 }
