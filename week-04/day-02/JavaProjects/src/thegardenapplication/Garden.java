@@ -15,6 +15,9 @@ public class Garden {
   }
 
   public void waterGarden(double waterAmount, ArrayList<Plant> garden) {
+
+    //checks the index of the plants that need water
+
     ArrayList<Integer> numberOfThirstyPlant = new ArrayList<>();
     int needOfWaterCounter = 0;
     for (int i = 0; i < garden.size(); i++) {
@@ -24,7 +27,11 @@ public class Garden {
       }
     }
 
+    //divides the water amount equally between the thirsty plants
+
     double waterPerPlant = waterAmount / needOfWaterCounter;
+
+    //waters the plants
 
     for (int i = 0; i < garden.size(); i++) {
       for (int j = 0; j < numberOfThirstyPlant.size(); j++) {
@@ -36,7 +43,6 @@ public class Garden {
         }
       }
     }
-
   }
 
   public void waterInfo(ArrayList<Plant> garden) {
@@ -45,8 +51,10 @@ public class Garden {
         System.out.println("The " + garden.get(i).getColor() + " flower needs watering.");
       } else if (garden.get(i) instanceof Tree && garden.get(i).getWaterLevel() < 10) {
         System.out.println("The " + garden.get(i).getColor() + " tree needs watering.");
+      } else if (garden.get(i) instanceof Flower) {
+        System.out.println("The " + garden.get(i).getColor() + " flower doesn't need water.");
       } else {
-        System.out.println("This plant is okey.");
+        System.out.println("The " + garden.get(i).getColor() + " tree doesn't need water.");
       }
     }
   }
