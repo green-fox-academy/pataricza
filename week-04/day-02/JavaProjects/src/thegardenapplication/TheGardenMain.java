@@ -14,17 +14,13 @@ public class TheGardenMain {
     myGarden.addPlants(purple);
     myGarden.addPlants(orange);
 
-    myGarden.waterInfo(myGarden.getGarden());
+    myGarden.waterInfo();
     System.out.println("");
 
-    myGarden.waterGarden(40, myGarden.getGarden());
-
-    myGarden.waterInfo(myGarden.getGarden());
+    myGarden.waterGarden(40);
     System.out.println("");
 
-    myGarden.waterGarden(70, myGarden.getGarden());
-
-    myGarden.waterInfo(myGarden.getGarden());
+    myGarden.waterGarden(70);
     System.out.println("");
   }
 }
