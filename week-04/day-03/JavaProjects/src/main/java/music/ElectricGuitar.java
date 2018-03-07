@@ -1,20 +1,20 @@
-package music;
+package main.java.music;
 
-public class Violin extends StringedInstrument {
+public class ElectricGuitar extends StringedInstrument {
 
-  public Violin() {
+  public ElectricGuitar() {
     setName("Electric Guitar");
     setNumberOfStrings(6);
   }
 
-  public Violin(int strings) {
+  public ElectricGuitar(int strings) {
     setName("Electric Guitar");
     setNumberOfStrings(strings);
   }
 
   @Override
   public void sound() {
-    System.out.println("Screech");
+    System.out.println("Twang");
   }
 
   @Override
