@@ -3,7 +3,7 @@ package fleetofthings;
 /**
  * Created by aze on 2017.03.29..
  */
-public class Thing {
+public class Thing implements Comparable<Thing> {
   private String name;
   private boolean completed;
 
@@ -18,5 +18,15 @@ public class Thing {
   @Override
   public String toString() {
     return (completed ? "[x] " : "[ ] ") + name;
+  }
+
+  @Override
+  public int compareTo(Thing o) {
+    if(name.charAt(0) == o.name.charAt(0))
+      return 0;
+    else if(name.charAt(0) > o.name.charAt(0))
+      return 1;
+    else
+      return -1;
   }
 }

@@ -16,6 +16,18 @@ public class DominosMain {
 
     Collections.sort(dominoes);
 
+  /*  for (int i = 0; i < dominoes.size(); i++) {
+      int compareResult = dominoes.get(i).compareTo(dominoes.get(i + 1));
+      if (compareResult == 0) {
+        System.out.println(" is the same ");
+      } else if (compareResult < 0) {
+        System.out.println("less than");
+      } else {
+        System.out.println("2nd elem is less than 1st");
+
+      }
+    } */
+
     System.out.println(dominoes);
   }
 }

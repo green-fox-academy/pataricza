@@ -24,4 +24,8 @@ public class Fleet {
     }
     return result;
   }
+
+  public ArrayList<Thing> getThings() {
+    return things;
+  }
 }

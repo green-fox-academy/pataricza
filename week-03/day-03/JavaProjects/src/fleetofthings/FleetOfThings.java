@@ -25,6 +25,8 @@ public class FleetOfThings {
     thing3.complete();
     thing4.complete();
 
+    Collections.sort(fleet.getThings());
+
     System.out.println(fleet);
   }
 }
