@@ -13,13 +13,12 @@ public class Violin extends StringedInstrument {
   }
 
   @Override
-  public void sound() {
-    System.out.println("Screech");
+  public String sound() {
+    return "Screech";
   }
 
   @Override
   public void play() {
-    System.out.print(getName() + ", a " + getNumberOfStrings() +"-stringed instrument that goes ");
-    sound();
+    System.out.println(getName() + ", a " + getNumberOfStrings() +"-stringed instrument that goes " + this.sound());
   }
 }

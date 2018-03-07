@@ -4,7 +4,7 @@ public abstract class StringedInstrument extends Instrument {
 
   int numberOfStrings;
 
-  public abstract void sound();
+  public abstract String sound();
 
   public int getNumberOfStrings() {
     return numberOfStrings;
