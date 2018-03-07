@@ -1,21 +1,23 @@
 package implementcharsequence;
 
-public class Gnirts implements CharSequence {
+public class Shifter implements CharSequence {
 
   String theString;
+  int modifier;
 
-  public Gnirts(String theString) {
+  public Shifter(String theString, int modifier) {
     this.theString = theString;
+    this.modifier = modifier;
   }
 
   @Override
   public int length() {
-    return theString.length()-1;
+    return theString.length();
   }
 
   @Override
   public char charAt(int index) {
-    return theString.charAt(length() - index);
+    return theString.charAt(index + modifier);
   }
 
   @Override

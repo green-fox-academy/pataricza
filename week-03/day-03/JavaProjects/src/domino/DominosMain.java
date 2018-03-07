@@ -16,6 +16,10 @@ public class DominosMain {
 
     Collections.sort(dominoes);
 
+  /*  Domino new1 = new Domino(5, 4);
+    Domino new2 = new Domino(3, 4);
+    System.out.println(new1.compareTo(new2)); */
+
   /*  for (int i = 0; i < dominoes.size(); i++) {
       int compareResult = dominoes.get(i).compareTo(dominoes.get(i + 1));
       if (compareResult == 0) {
