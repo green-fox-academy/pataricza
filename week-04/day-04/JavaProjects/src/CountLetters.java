@@ -14,4 +14,14 @@ public class CountLetters {
     }
    return dictionary;
   }
+
+  public HashMap<Character, Integer> stringDictionary2(String dictionaryThis) {
+    HashMap<Character, Integer> dictionary = new HashMap<>();
+
+    for (int i = 0; i < dictionaryThis.length(); i++) {
+      dictionary.merge(dictionaryThis.charAt(i), 1, Integer::sum);
+    }
+    return dictionary;
+  }
+
 }

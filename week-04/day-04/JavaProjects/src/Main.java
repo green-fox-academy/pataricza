@@ -6,6 +6,16 @@ public class Main {
 
     System.out.println(myCounter.stringDictionary("vaaaaalllllamivvv"));
 
-    HashMap Mymap = myCounter.stringDictionary("vaaaaalllllamivvv");
+    HashMap myMap = myCounter.stringDictionary("vaaaaalllllamivvv");
+
+    for (Object entry : myMap.keySet()) {
+      if (myMap.get(entry).equals(6)) {
+        System.out.println(entry);
+      }
+    }
+
+    System.out.println(myMap.keySet());
+
+    System.out.println(myCounter.stringDictionary2("vaaaaalllllamivvv"));
   }
 }

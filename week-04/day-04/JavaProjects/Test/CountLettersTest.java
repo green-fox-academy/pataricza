@@ -21,4 +21,15 @@ public class CountLettersTest {
   public void testOccuarence2(){
     assertEquals((Integer) 1, myLetters.stringDictionary("vaalami").get('v'));
   }
+
+  @Test
+  public void testCorrectValueByKey(){
+    char temp = ' ';
+    for (Object entry : myLetters.stringDictionary("vaalami").keySet()) {
+      if (myLetters.stringDictionary("vaalami").get(entry).equals(3)) {
+        temp = (char) entry;
+      }
+    }
+    assertEquals('a', temp);
+  }
 }
