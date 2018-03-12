@@ -32,4 +32,9 @@ public class CountLettersTest {
     }
     assertEquals('a', temp);
   }
+
+  @Test
+  public void whatIfNumbers() {
+    assertEquals((Integer) 1, myLetters.stringDictionary("va2alami").get('2'));
+  }
 }
