@@ -9,14 +9,14 @@ public class Pirate {
   private boolean captain;
 
   public Pirate() {
-    name = NameGenerator();
+    name = nameGenerator();
     sleep = false;
     dead = false;
     drunkLevel = 0;
     captain = false;
   }
 
-  public static String NameGenerator() {
+  public static String nameGenerator() {
 
     String[] Beginning = { "Kr", "Ca", "Ra", "Mrok", "Cru",
         "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
