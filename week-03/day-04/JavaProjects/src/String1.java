@@ -7,12 +7,12 @@ public class String1 {
     if (charCounter == changeThis.length()) {
       return tempString;
     } else if (changeThis.charAt(charCounter) == 'x') {
-        tempString += 'y';
-      } else {
-          tempString += changeThis.charAt(charCounter);
-        }
-  charCounter++;
-  return changeXToY(changeThis, charCounter, tempString);
+      tempString += 'y';
+    } else {
+      tempString += changeThis.charAt(charCounter);
+    }
+    charCounter++;
+    return changeXToY(changeThis, charCounter, tempString);
   }
 }
 

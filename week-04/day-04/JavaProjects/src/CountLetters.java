@@ -7,7 +7,8 @@ public class CountLetters {
 
     for (int i = 0; i < dictionaryThis.length(); i++) {
       if(dictionary.containsKey(dictionaryThis.charAt(i))) {
-        dictionary.put(dictionaryThis.charAt(i), dictionary.get(dictionaryThis.charAt(i))+1);
+        dictionary.put(dictionaryThis.charAt(i),
+            dictionary.get(dictionaryThis.charAt(i))+1);
       } else {
         dictionary.put(dictionaryThis.charAt(i), 1);
       }
