@@ -26,12 +26,12 @@ public class Carriers {
     } else {
       for (Aircrafts oneAircraft : carrier) {
         if (oneAircraft.isPriority() && ammo != 0) {
-          this.ammo = oneAircraft.refill(ammo);
+          ammo = oneAircraft.refill(ammo);
         }
       }
       for (Aircrafts oneAircraft : carrier) {
         if (!oneAircraft.isPriority() && ammo != 0) {
-          this.ammo = oneAircraft.refill(ammo);
+          ammo = oneAircraft.refill(ammo);
         }
       }
     }
@@ -46,7 +46,7 @@ public class Carriers {
   }
 
   public void getStatus(){
-    if (health == 0) {
+    if (health <= 0) {
       System.out.println("It's dead Jim :(");
     } else {
       System.out.println("HP: " + health + " Aircraft count: " + aircraftCounter + " Ammo Storage: " + ammo
@@ -55,6 +55,12 @@ public class Carriers {
       for (Aircrafts oneAircraft : carrier) {
         System.out.println(oneAircraft.getStatus());
       }
+    }
+  }
+
+  public void fight(Carriers enemy) {
+    for (Aircrafts oneAircraft : carrier) {
+      enemy.health -= oneAircraft.fight();
     }
   }
 }

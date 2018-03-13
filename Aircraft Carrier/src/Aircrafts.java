@@ -41,10 +41,6 @@ public class Aircrafts {
     return type == "F35";
   }
 
-  public int getAmmoCapacity() {
-    return ammoCapacity;
-  }
-
   public int getAmmoLevel() {
     return ammoLevel;
   }
