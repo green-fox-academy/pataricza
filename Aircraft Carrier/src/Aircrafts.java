@@ -34,14 +34,22 @@ public class Aircrafts {
   }
 
   public String getStatus() {
-    return "Type: " + type + "Ammo: " + ammoLevel + "Base Damage: " + baseDamage + "All Damage: " + baseDamage*ammoLevel;
+    return "Type: " + type + " Ammo: " + ammoLevel + " Base Damage: " + baseDamage + " All Damage: " + baseDamage*ammoLevel;
   }
 
   public boolean isPriority() {
-    return type == "f35";
+    return type == "F35";
   }
 
   public int getAmmoCapacity() {
     return ammoCapacity;
+  }
+
+  public int getAmmoLevel() {
+    return ammoLevel;
+  }
+
+  public int getBaseDamage() {
+    return baseDamage;
   }
 }
