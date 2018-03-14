@@ -14,11 +14,11 @@ public class Armada {
     int enemyArmadaIndex = 0;
 
     while(myArmadaIndex != armada.size() && enemyArmadaIndex != enemy.armada.size()) {
-      int whichArmadaWon = armada.get(myArmadaIndex).battle(enemy.armada.get(enemyArmadaIndex));
-      if (whichArmadaWon == 1) {
+      int whichShipWon = armada.get(myArmadaIndex).battle(enemy.armada.get(enemyArmadaIndex));
+      if (whichShipWon == 1) {
         enemyArmadaIndex++;
         System.out.println("Our ship has won, ready for the next battle.");
-      } else if (whichArmadaWon == 2) {
+      } else if (whichShipWon == 2) {
         myArmadaIndex++;
         System.out.println("Enenmy ship has won, ready for the next battle.");
       } else {
