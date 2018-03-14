@@ -3,14 +3,6 @@ public class Main {
     Pirate pirate1 = new Pirate();
     Pirate pirate2 = new Pirate();
 
-    pirate1.drinkSomeRum();
-    pirate1.drinkSomeRum();
-
-    pirate1.brawl(pirate2);
-
-    System.out.println(pirate2.isDead());
-
-    // System.out.println(pirate1.getName());
-    // System.out.println(pirate1.getDrunkLevel());
+    pirate1.pirateInfo();
   }
 }

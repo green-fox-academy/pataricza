@@ -30,11 +30,9 @@ public class Pirate {
 
     Random rand = new Random();
 
-
-      return Beginning[rand.nextInt(Beginning.length)] +
-          Middle[rand.nextInt(Middle.length)]+
-          End[rand.nextInt(End.length)];
-
+    return Beginning[rand.nextInt(Beginning.length)] +
+           Middle[rand.nextInt(Middle.length)]+
+           End[rand.nextInt(End.length)];
   }
 
   public void drinkSomeRum() {
@@ -53,7 +51,7 @@ public class Pirate {
       System.out.println("Pour me anudder!");
     } else {
       System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
-      sleep = true;
+      sleep();
     }
   }
 
@@ -83,16 +81,24 @@ public class Pirate {
     }
   }
 
-  public String getName() {
-    return name;
+  public void pirateInfo() {
+    System.out.println("Name: " + name);
+    System.out.println("Sleep " + sleep);
+    System.out.println("Dead: " + dead);
+    System.out.println("Drunk level: " + drunkLevel);
+    System.out.println("Captain: " + captain);
+  }
+
+  public boolean isDead() {
+    return dead;
   }
 
   public boolean isSleep() {
     return sleep;
   }
 
-  public boolean isDead() {
-    return dead;
+  public void setCaptain(boolean captain) {
+    this.captain = captain;
   }
 
   public int getDrunkLevel() {

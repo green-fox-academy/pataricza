@@ -16,7 +16,7 @@ public class AircraftCarrierMain {
 
     myCarrier.fill();
 
-  //  myCarrier.fight(enemyCarrier);
+    myCarrier.fight(enemyCarrier);
 
     myCarrier.getStatus();
     System.out.println();
