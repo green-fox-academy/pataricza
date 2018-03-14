@@ -47,7 +47,7 @@ public class Pirate {
     if (dead) {
       System.out.println("Dead pirates don't tell tales.");
     }
-    else if (drunkLevel > 4) {
+    else if (drunkLevel < 5) {
       System.out.println("Pour me anudder!");
     } else {
       System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
@@ -83,7 +83,7 @@ public class Pirate {
 
   public void pirateInfo() {
     System.out.println("Name: " + name);
-    System.out.println("Sleep " + sleep);
+    System.out.println("Sleep: " + sleep);
     System.out.println("Dead: " + dead);
     System.out.println("Drunk level: " + drunkLevel);
     System.out.println("Captain: " + captain);

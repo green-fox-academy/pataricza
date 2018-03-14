@@ -3,6 +3,23 @@ public class Main {
     Pirate pirate1 = new Pirate();
     Pirate pirate2 = new Pirate();
 
-    pirate1.pirateInfo();
+    Ship myShip = new Ship();
+    Ship enemy = new Ship();
+
+    myShip.fillShip();
+    enemy.fillShip();
+
+    myShip.getInfo();
+    System.out.println();
+    enemy.getInfo();
+
+    myShip.battle(enemy);
+    System.out.println("\nAfter the battle:\n");
+
+    myShip.getInfo();
+    myShip.detailedInfo();
+    System.out.println();
+    enemy.getInfo();
+    enemy.detailedInfo();
   }
 }
