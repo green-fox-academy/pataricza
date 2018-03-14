@@ -44,18 +44,22 @@ public class Ship {
     return numberOfAlivePirates() - ship.get(indexOfTheCaptain).getDrunkLevel();
   }
 
-  public boolean battle(Ship enemy) {
+  public int battle(Ship enemy) {
+    int whoWon = 0;
+
     if (calculateShipScore() > enemy.calculateShipScore()) {
       makeDrinkRandomNumberOfPirates();
       enemy.killRandomNumberOfPirates();
+      whoWon = 1;
     } else if (calculateShipScore() < enemy.calculateShipScore()) {
       enemy.makeDrinkRandomNumberOfPirates();
       killRandomNumberOfPirates();
+      whoWon = 2;
     } else {
       killRandomNumberOfPirates();
       enemy.killRandomNumberOfPirates();
     }
-  return calculateShipScore() > enemy.calculateShipScore();
+  return whoWon;
   }
 
   public void killRandomNumberOfPirates() {

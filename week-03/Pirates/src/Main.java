@@ -1,25 +1,32 @@
 public class Main {
   public static void main(String[] args) {
-    Pirate pirate1 = new Pirate();
-    Pirate pirate2 = new Pirate();
+    Armada myArmada = new Armada();
+    Armada enemyArmada = new Armada();
 
-    Ship myShip = new Ship();
-    Ship enemy = new Ship();
+    Ship myShip1 = new Ship();
+    Ship myShip2 = new Ship();
+    Ship myShip3 = new Ship();
 
-    myShip.fillShip();
-    enemy.fillShip();
+    Ship enemyShip1 = new Ship();
+    Ship enemyShip2 = new Ship();
+    Ship enemyShip3 = new Ship();
 
-    myShip.getInfo();
-    System.out.println();
-    enemy.getInfo();
+    myShip1.fillShip();
+    myShip2.fillShip();
+    myShip3.fillShip();
 
-    myShip.battle(enemy);
-    System.out.println("\nAfter the battle:\n");
+    enemyShip1.fillShip();
+    enemyShip2.fillShip();
+    enemyShip3.fillShip();
 
-    myShip.getInfo();
-    myShip.detailedInfo();
-    System.out.println();
-    enemy.getInfo();
-    enemy.detailedInfo();
+    myArmada.addShipsToArmada(myShip1);
+    myArmada.addShipsToArmada(myShip2);
+    myArmada.addShipsToArmada(myShip3);
+
+    enemyArmada.addShipsToArmada(enemyShip1);
+    enemyArmada.addShipsToArmada(enemyShip2);
+    enemyArmada.addShipsToArmada(enemyShip3);
+
+    myArmada.war(enemyArmada);
   }
 }
