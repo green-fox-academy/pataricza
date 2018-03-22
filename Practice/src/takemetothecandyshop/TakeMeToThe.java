@@ -8,7 +8,6 @@ public class TakeMeToThe {
     // One candie's price is 20$
     // And it made from 10gr of sugar
     // we can raise their prices with a given percentage
-
     // Create a CandyShop class
     // It can store sugar and money as income. The constructor should take the amount of sugar in gramms.
     // we can create lollipops and candies store them in the CandyShop's storage

@@ -6,7 +6,7 @@ public class CandyShop {
   public static final Candies CANDY = new Candies();
   public static final Lollipops LOLLIPOP = new Lollipops();
   private int sugar;
-  private int money;
+  private double money;
   private ArrayList<Sweets> storage;
   private int numberOfCandies;
   private int numberOfLollipops;
@@ -31,7 +31,7 @@ public class CandyShop {
 
   public void raise(int percentage) {
     for (Sweets oneSweet : storage) {
-      oneSweet.setPrice(oneSweet.getPrice() + oneSweet.getPrice()*0.05);
+      oneSweet.setPrice(oneSweet.getPrice() + oneSweet.getPrice()*(percentage/100));
     }
   }
 
