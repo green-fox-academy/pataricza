@@ -11,23 +11,46 @@
         td {
             background-color: coral;
         }
+        .king {
+             color: gold;
+         }
+        .notking {
+            color: black;
+        }
     </style>
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
 </head>
 <body>
+<form th:method = "GET" th:action="@{/multipleAccount}">
 <table class="Table">
     <tr>
+        <th>Index</th>
         <th>Name</th>
         <th>Balance</th>
         <th>AnimalType</th>
+        <th>Is he king?</th>
+        <th>Is he good?</th>
+        <th>Money raiser</th>
     </tr>
     <tr th:each="oneAccount : ${accountList.getAccountlist()}">
+        <td th:text="${oneAccountStat.index}"></td>
         <td th:text="${oneAccount.name}"></td>
         <td th:text="${oneAccount.balance}"></td>
         <td th:text="${oneAccount.animalType}"></td>
+        <td th:class="${oneAccount.king} ? king : notking" th:text="${oneAccount.king}"></td>
+        <td><th:block th:switch="${oneAccount.good}">
+            <div th:case="true">
+                Good one
+            </div>
+            <div th:case="false">
+                Bad guy
+            </div>
+        </th:block></td>
+        <td th:method="GET" th:action="${oneAccount.raiseAccount()}"><button type="submit">Raise</button><td/>
     </tr>
 </table>
+</form>
 </body>
 </html>

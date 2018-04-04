@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MultipleAccountController {
 
-  private ListOfAccounts accountList;
-
   @GetMapping(value = "/multipleAccount")
   public String showAccount(Model model) {
     model.addAttribute("accountList", new ListOfAccounts());

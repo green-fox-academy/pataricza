@@ -8,11 +8,12 @@ public class ListOfAccounts {
 
   public ListOfAccounts() {
     accountlist = new ArrayList<>();
-    accountlist.add(new BankAccount("Shenzi", 10,"hyena"));
-    accountlist.add(new BankAccount("Banzai", 30,"hyena"));
-    accountlist.add(new BankAccount("Ed", 15,"hyena"));
-    accountlist.add(new BankAccount("Timon", 10,"meerkat"));
-    accountlist.add(new BankAccount("Bumba", 45,"warthog"));
+    accountlist.add(new BankAccount("Shenzi", 10,"hyena", false, false));
+    accountlist.add(new BankAccount("Banzai", 30,"hyena", false, false));
+    accountlist.add(new BankAccount("Ed", 15,"hyena", false,false));
+    accountlist.add(new BankAccount("Timon", 10,"meerkat", false, true));
+    accountlist.add(new BankAccount("Bumba", 45,"warthog", false, true));
+    accountlist.add(new BankAccount("Lion King", 200,"lion", true, true));
   }
 
   public List<BankAccount> getAccountlist() {

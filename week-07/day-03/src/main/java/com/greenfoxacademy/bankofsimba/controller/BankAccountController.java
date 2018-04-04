@@ -8,11 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BankAccountController {
 
-  private BankAccount simba;
-
   @GetMapping(value = "/show")
   public String showAccount(Model model) {
-    model.addAttribute("bankaccount", new BankAccount("Simba", 2000, "lion"));
+    model.addAttribute("bankaccount", new BankAccount("Simba", 2000, "lion", true, true));
     return "BankAccountFields";
   }
 }
