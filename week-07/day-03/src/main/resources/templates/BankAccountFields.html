@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<p th:text="'Name: ' + ${bankaccount.name} + ' Balance: ' + ${bankaccount.balance} + '.00 Zebra Animal Type: ' + ${bankaccount.animalType}"/>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        table {
+            border: 3px solid black;
+        }
+        th {
+            background-color: aqua;
+        }
+        td {
+            background-color: coral;
+        }
+    </style>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<table class="Table">
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>AnimalType</th>
+    </tr>
+    <tr th:each="oneAccount : ${accountList.getAccountlist()}">
+        <td th:text="${oneAccount.name}"></td>
+        <td th:text="${oneAccount.balance}"></td>
+        <td th:text="${oneAccount.animalType}"></td>
+    </tr>
+</table>
+</body>
+</html>
