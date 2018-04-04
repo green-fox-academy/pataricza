@@ -23,7 +23,6 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<form th:method = "GET" th:action="@{/multipleAccount}">
 <table class="Table">
     <tr>
         <th>Index</th>
@@ -32,7 +31,6 @@
         <th>AnimalType</th>
         <th>Is he king?</th>
         <th>Is he good?</th>
-        <th>Money raiser</th>
     </tr>
     <tr th:each="oneAccount : ${accountList.getAccountlist()}">
         <td th:text="${oneAccountStat.index}"></td>
@@ -48,9 +46,7 @@
                 Bad guy
             </div>
         </th:block></td>
-        <td th:method="GET" th:action="${oneAccount.raiseAccount()}"><button type="submit">Raise</button><td/>
     </tr>
 </table>
-</form>
 </body>
 </html>

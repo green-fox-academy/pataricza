@@ -35,12 +35,4 @@ public class BankAccount {
   public boolean isGood() {
     return isGood;
   }
-
-  public void raiseAccount() {
-    if (isKing) {
-      balance += 100;
-    } else {
-      balance += 10;
-    }
-  }
 }
