@@ -48,5 +48,15 @@
         </th:block></td>
     </tr>
 </table>
+<form action="#" th:action="@{/multipleAccount/raise}" th:object="${formResponse}" method="post">
+    <p>Choose the name of the animal you want to donate to!</p>
+    <select th:field="*{index}">
+        <option value=""> --- </option>
+        <option th:each="oneAccount : ${accountList.getAccountlist()}"
+                th:value="${oneAccountStat.index}"
+                th:text="${oneAccount.name}" />
+    </select>
+    <input type="submit" value="Submit"/>
+</form>
 </body>
 </html>
