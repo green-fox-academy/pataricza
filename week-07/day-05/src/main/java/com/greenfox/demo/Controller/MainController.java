@@ -18,10 +18,10 @@ public class MainController {
   @GetMapping(value = "/")
   public String mainPage(@RequestParam(name = "foxname", required = false) String foxname, Model model) {
     model.addAttribute("greenfox", myImages.getGreenfox());
-    if (foxname == null) {
+    if (myFox.getName() == null) {
       model.addAttribute("foxname", "MR.Fox");
     } else {
-      model.addAttribute("foxname", foxname);
+      model.addAttribute("foxname", myFox.getName());
     }
     return "Index";
   }

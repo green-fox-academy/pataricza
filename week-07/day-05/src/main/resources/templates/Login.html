@@ -8,9 +8,13 @@
 <body>
 <h1>Welcome to Fox Club!!</h1>
 <p>Please enter a name so you can associate to your pet!</p>
-<form action="#" th:action="@{/login}" method="post">
+<form action="#" th:action="@{/login}" th:object="${fox}" method="post">
     <label for="username">Name:</label>
-    <input type="text" id="username" name="foxname" />
+    <input type="text" id="username" name="*{name}" />
+    <label for="food">Food:</label>
+    <input type="text" id="food" name="*{food}" />
+    <label for="drink">Drink:</label>
+    <input type="text" id="drink" name="*{drink}" />
     <input type="submit" value="GO" />
 </form>
 </body>
