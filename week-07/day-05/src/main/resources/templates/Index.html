@@ -10,7 +10,7 @@
     <li>Information</li>
 </ul>
 <img th:src="${greenfox}" alt="Green fox">
-<p>This is MR.Fox living on pizza and diet coke. He knows 2 tricks.</p>
+<p th:text="'This is ' + ${foxname} + ' living on pizza and diet coke. He knows 2 tricks.'"></p>
 <h2>Known Tricks</h2>
 <ul>
     <li>write HTML</li>
