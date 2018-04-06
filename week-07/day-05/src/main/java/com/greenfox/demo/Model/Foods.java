@@ -9,13 +9,13 @@ public enum Foods {
   FOOD6("Chicken and rice");
 
 
-  private String url;
+  private String food;
 
-  WhoisRIR(String url) {
-    this.url = url;
+  Foods(String url) {
+    this.food = url;
   }
 
   public String url() {
-    return url;
+    return food;
   }
 }

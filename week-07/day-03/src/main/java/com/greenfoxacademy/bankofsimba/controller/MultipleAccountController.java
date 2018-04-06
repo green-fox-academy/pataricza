@@ -28,4 +28,10 @@ public class MultipleAccountController {
     myAccountlist.raiseOneAccount(Integer.parseInt(formResponse.getIndex()));
     return "redirect:/multipleAccount";
   }
+
+  @PostMapping("/increment")
+  public String incrementBalanceSubmit(@ModelAttribute(value = "id") Integer id) {
+    myAccountlist.raiseOneAccount(id);
+    return "redirect:/multipleAccount";
+  }
 }

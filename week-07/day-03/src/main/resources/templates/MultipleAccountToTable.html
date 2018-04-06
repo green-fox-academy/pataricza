@@ -23,6 +23,7 @@
     <meta charset="utf-8" />
 </head>
 <body>
+<form  th:action="@{/increment}"  method="post">
 <table class="Table">
     <tr>
         <th>Index</th>
@@ -31,6 +32,7 @@
         <th>AnimalType</th>
         <th>Is he king?</th>
         <th>Is he good?</th>
+        <th>Raise balance</th>
     </tr>
     <tr th:each="oneAccount : ${accountList.getAccountlist()}">
         <td th:text="${oneAccountStat.index}"></td>
@@ -46,8 +48,10 @@
                 Bad guy
             </div>
         </th:block></td>
+        <td><button name="id" th:value="${oneAccountStat.index}">Increment Balance</button></td>
     </tr>
 </table>
+</form>
 <form action="#" th:action="@{/multipleAccount/raise}" th:object="${formResponse}" method="post">
     <p>Choose the name of the animal you want to donate to!</p>
     <select th:field="*{index}">
