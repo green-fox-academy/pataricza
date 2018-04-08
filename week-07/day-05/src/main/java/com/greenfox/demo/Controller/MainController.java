@@ -1,7 +1,6 @@
 package com.greenfox.demo.Controller;
 
-import com.greenfox.demo.Model.Fox;
-import com.greenfox.demo.Model.GreenfoxImages;
+import com.greenfox.demo.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +13,21 @@ public class MainController {
   GreenfoxImages myImages;
   @Autowired
   Fox myFox;
+  @Autowired
+  Foxlist myFoxlist;
 
   @GetMapping(value = "/")
   public String mainPage(@RequestParam(name = "foxname", required = false) String foxname, Model model) {
     model.addAttribute("greenfox", myImages.getGreenfox());
-    if (myFox.getName() == null) {
-      model.addAttribute("foxname", "MR.Fox");
+    model.addAttribute("foods", Foods.values());
+    model.addAttribute("drinks", Drinks.values());
+    if (foxname == null) {
+      model.addAttribute("fox", myFox);
+      return "Login";
     } else {
-      model.addAttribute("foxname", myFox.getName());
+      model.addAttribute("currentFox", myFoxlist.getFoxList().get(myFoxlist.getFoxIndex(foxname)));
+      return "Index";
     }
-    return "Index";
   }
 
   @GetMapping(value = "/login")
@@ -32,8 +36,8 @@ public class MainController {
   }
 
   @PostMapping(value = "/login")
-  public String loggedInPage(@ModelAttribute(name = "foxname") String foxname) {
-    myFox.setName(foxname);
-    return "redirect:/?foxname=" + foxname;
+  public String loggedInPage(@ModelAttribute Fox filledFox) {
+    myFoxlist.addFox(filledFox);
+    return "redirect:/?foxname=" + filledFox.getName();
   }
 }

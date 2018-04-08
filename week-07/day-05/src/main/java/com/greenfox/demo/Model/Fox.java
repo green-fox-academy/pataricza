@@ -2,15 +2,17 @@ package com.greenfox.demo.Model;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class Fox {
 
   private String name;
-  private List<String> tricks;
+  private List<String> tricks = new ArrayList<>();
   private String food;
   private String drink;
+
 
   public String getName() {
     return name;

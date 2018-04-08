@@ -1,20 +1,34 @@
 package com.greenfox.demo.Model;
 
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class Foxlist {
 
-  List<Fox> foxlist;
+  List<Fox> foxList = new ArrayList<>();
 
-  public List<Fox> getFoxlist() {
-    return foxlist;
+  public List<Fox> getFoxList() {
+    return foxList;
   }
 
-  public void setFoxlist(List<Fox> foxlist) {
-    this.foxlist = foxlist;
+  public void setFoxList(List<Fox> foxList) {
+    this.foxList = foxList;
   }
 
   public void addFox(Fox fox) {
-    foxlist.add(fox);
+    foxList.add(fox);
+  }
+
+  public int getFoxIndex(String getHisIndex) {
+    int thatsTheIndex = 0;
+    for (int i = 0; i < foxList.size(); i++) {
+      if (foxList.get(i).getName().equals(getHisIndex)) {
+        thatsTheIndex = i;
+      }
+    }
+    return thatsTheIndex;
   }
 }

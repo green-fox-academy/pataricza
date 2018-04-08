@@ -10,10 +10,11 @@
     <li>Information</li>
 </ul>
 <img th:src="${greenfox}" alt="Green fox">
-<p th:text="'This is ' + ${foxname} + ' living on pizza and diet coke. He knows 2 tricks.'"></p>
+<p th:text="'This is ' + ${currentFox.getName()} + ' living on ' + ${currentFox.getFood()}
++ ' and ' + ${currentFox.getDrink()} + '. He knows ' + ${currentFox.getTricks().size()} + ' tricks.'"></p>
 <h2>Known Tricks</h2>
 <ul>
-    <li><a href="/login">Login</a></li>
+    <li>Nothing</li>
 </ul>
 </body>
 </html>
