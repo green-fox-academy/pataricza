@@ -1,11 +1,14 @@
 package com.greenfox.demo.Model;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Service
 public class Todo {
 
   @Id
@@ -36,5 +39,21 @@ public class Todo {
 
   public boolean isDone() {
     return done;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setUrgent(boolean urgent) {
+    this.urgent = urgent;
+  }
+
+  public void setDone(boolean done) {
+    this.done = done;
   }
 }

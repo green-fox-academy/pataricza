@@ -18,18 +18,21 @@
 </head>
 <body>
 <h2>Todos for today</h2>
+<a href="/todo/add">Add new todo</a>
 <table class="Table">
     <tr>
         <th>Id</th>
         <th>Title</th>
         <th>Urgent</th>
         <th>Done</th>
+        <th>Delete</th>
     </tr>
     <tr th:each="oneTodo : ${todos}">
         <td th:text="${oneTodo.id}"></td>
         <td th:text="${oneTodo.title}"></td>
         <td th:text="${oneTodo.urgent}"></td>
         <td th:text="${oneTodo.done}"></td>
+        <td><a th:href="@{'/' + ${oneTodo.id} + '/delete'}">delete</a></td>
     </tr>
 </table>
 </body>
