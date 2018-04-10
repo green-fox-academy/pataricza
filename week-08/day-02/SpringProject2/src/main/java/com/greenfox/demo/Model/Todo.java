@@ -25,4 +25,16 @@ public class Todo {
   public String getTitle() {
     return title;
   }
+
+  public long getId() {
+    return id;
+  }
+
+  public boolean isUrgent() {
+    return urgent;
+  }
+
+  public boolean isDone() {
+    return done;
+  }
 }
