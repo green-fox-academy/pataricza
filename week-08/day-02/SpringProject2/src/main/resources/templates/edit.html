@@ -8,10 +8,10 @@
 <body>
 <h2>Edit todo</h2>
 <form action="#" th:action="@{'/' + ${todo.id} + '/edit'}" th:object="${todo}" method="post">
-    <label for="username">Todo description:</label>
-    <input type="text" id="username" th:field="*{title}" th:required="required"/>
-    <input type="checkbox" th:field="*{urgent}" th:checked="*{urgent}" />
-    <input type="checkbox" th:field="*{done}" th:checked="*{done}" />
+    <label for="description">Todo description:</label>
+    <input type="text" id="description" th:field="*{title}" th:required="required"/><br>
+    <input type="checkbox" th:field="*{urgent}" th:checked="*{urgent}" />Urgent<br>
+    <input type="checkbox" th:field="*{done}" th:checked="*{done}" />Done<br>
     <input type="submit" value="Submit" />
 </form>
 </body>
