@@ -1,9 +1,7 @@
 package com.greenfox.demo.controller;
 
-import com.greenfox.demo.model.Doubling;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.greenfox.demo.model.*;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MainRestController {
@@ -18,9 +16,33 @@ public class MainRestController {
     }
   }
 
-  @GetMapping(value = "/greeting")
-  public Doubling returnGreeting(@RequestParam(value = "name", required = false) String name,
-                                 @RequestParam(value = "name", required = false) String title) {
+  @GetMapping(value = "/greeter")
+  public Greeting returnGreeting(@RequestParam(value = "name", required = false) String name,
+                                 @RequestParam(value = "title", required = false) String title) {
 
+    if (name == null) {
+      return new Greeting("Please provide a name!");
+    } else if (title == null) {
+      return new Greeting("Please provide a title!");
+    } else {
+      return new Greeting(name, title);
+    }
+  }
+
+  @GetMapping(value = "/appenda/{appendable}")
+  public AppendWord appendA(@PathVariable("appendable") String append) {
+    return new AppendWord(append);
+  }
+
+  @PostMapping(value = "/dountil/{what}")
+  public Result doUntil(@PathVariable("what") String what, @RequestBody(required = false) UntilUntil untilUntil) {
+    if (untilUntil != null) {
+      if (what.equals("factor")) {
+        return new Result(untilUntil.factorial());
+      } else if (what.equals("sum")) {
+        return new Result(untilUntil.summing());
+      }
+    }
+    return new Result();
   }
 }
