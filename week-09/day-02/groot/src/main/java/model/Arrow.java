@@ -1,6 +1,6 @@
 package model;
 
-public class Arrow {
+public class Arrow implements ArrowResponse {
 
   private Double distance;
   private Double time;
