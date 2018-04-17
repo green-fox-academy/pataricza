@@ -47,4 +47,20 @@ public class GuardianControllerTest {
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.error").value("I am Groot!"));
   }
+
+  @Test
+  public void arrowResponse() throws Exception {
+    mockMvc.perform(get("/yondu").param("distance", "100")
+                                            .param("time", "10"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.distance").value(100.0))
+        .andExpect(jsonPath("$.time").value(10.0))
+        .andExpect(jsonPath("$.speed").value(10.0));
+  }
+
+  @Test
+  public void arrowNoParamResponse() throws Exception {
+    mockMvc.perform(get("/yondu"))
+        .andExpect(status().is4xxClientError());
+  }
 }
