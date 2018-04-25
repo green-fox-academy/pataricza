@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void onClick(View view) {
-    Intent searchBySubject = new Intent(this, SearchBooksBySubject.class);
+    Intent searchBySubject = new Intent(this, FakeApiTester.class);
     startActivity(searchBySubject);
   }
 }

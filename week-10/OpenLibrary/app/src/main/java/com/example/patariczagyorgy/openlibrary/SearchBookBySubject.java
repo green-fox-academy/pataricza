@@ -18,7 +18,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SearchBooksBySubject extends AppCompatActivity {
+public class SearchBookBySubject extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +38,14 @@ public class SearchBooksBySubject extends AppCompatActivity {
       @Override
       public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
         List<Book> books = response.body();
-        ListAdapter bookadapter = new ArrayAdapter<Book>(this, android.R.layout.simple_list_item_1, books);
+        ListAdapter bookadapter = new ArrayAdapter<Book>(SearchBookBySubject.this, android.R.layout.simple_list_item_1, books);
         ListView bookListView = (ListView) findViewById(R.id.bookList);
         bookListView.setAdapter(bookadapter);
       }
 
       @Override
       public void onFailure(Call<List<Book>> call, Throwable t) {
-        Toast.makeText(SearchBooksBySubject.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+        Toast.makeText(SearchBookBySubject.this, "Something went wrong", Toast.LENGTH_SHORT).show();
       }
     });
   }
