@@ -1,6 +1,8 @@
 package com.greenfox.demo.controller;
 
 import com.greenfox.demo.model.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -44,5 +46,19 @@ public class MainRestController {
       }
     }
     return new Result();
+  }
+
+  @PostMapping("/arrays")
+  public ResponseEntity<ResultResponse> arrayResponse(@RequestBody(required = false) ComplexJsonObject complexJsonObject) {
+    if (complexJsonObject == null)
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new MyError("Please provide what to do with the numbers."));
+    if (complexJsonObject.getWhat() == null || complexJsonObject.getNumbers() == null)
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new MyError("Please provide what to do with the numbers."));
+    else if (complexJsonObject.getWhat().equals("sum") || complexJsonObject.getWhat().equals("multiply"))
+      return ResponseEntity.status(HttpStatus.OK).body(new Result2(complexJsonObject.getWhat(), complexJsonObject.getNumbers()));
+    else if (complexJsonObject.getWhat().equals("double"))
+      return ResponseEntity.status(HttpStatus.OK).body(new Result3(complexJsonObject.getNumbers()));
+    else
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new MyError("Please provide what to do with the numbers."));
   }
 }
