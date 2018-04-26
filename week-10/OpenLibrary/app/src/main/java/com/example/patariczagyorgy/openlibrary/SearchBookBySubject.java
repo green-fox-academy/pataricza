@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.example.patariczagyorgy.openlibrary.model.Book;
 import com.example.patariczagyorgy.openlibrary.service.OpenLibraryClient;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -26,25 +27,31 @@ public class SearchBookBySubject extends AppCompatActivity {
     setContentView(R.layout.activity_search_books_by_subject);
 
     Retrofit.Builder builder = new Retrofit.Builder()
-        .baseUrl("http://openlibrary.org/")
+        .baseUrl("https://jsonplaceholder.typicode.com/")
         .addConverterFactory(GsonConverterFactory.create());
 
     Retrofit retrofit = builder.build();
 
     OpenLibraryClient client = retrofit.create(OpenLibraryClient.class);
-    Call<List<Book>> call = client.searchBySubject("fiction");
+    Call<List<Book>> call = client.searchBySubject();
 
     call.enqueue(new Callback<List<Book>>() {
       @Override
       public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
         List<Book> books = response.body();
-        ListAdapter bookadapter = new ArrayAdapter<Book>(SearchBookBySubject.this, android.R.layout.simple_list_item_1, books);
+        List<String> bookBodies = new ArrayList<>();
+        for (Book oneBook : books) {
+          bookBodies.add(oneBook.getBody());
+        }
+        ListAdapter bookadapter = new ArrayAdapter<String>(SearchBookBySubject.this, android.R.layout.simple_list_item_1, bookBodies);
         ListView bookListView = (ListView) findViewById(R.id.bookList);
         bookListView.setAdapter(bookadapter);
       }
 
       @Override
       public void onFailure(Call<List<Book>> call, Throwable t) {
+        System.out.println("-------------------------------------------------------------------------------------");
+        t.printStackTrace();
         Toast.makeText(SearchBookBySubject.this, "Something went wrong", Toast.LENGTH_SHORT).show();
       }
     });

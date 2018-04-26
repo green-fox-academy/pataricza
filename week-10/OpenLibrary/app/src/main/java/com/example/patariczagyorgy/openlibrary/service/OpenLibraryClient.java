@@ -11,8 +11,8 @@ import retrofit2.http.Query;
 
 public interface OpenLibraryClient {
 
-  @GET("/search.json")
-  Call<List<Book>> searchBySubject(@Query("subject") String subject);
+  @GET("/posts/1/comments")
+  Call<List<Book>> searchBySubject();
 
   @GET("/posts/1")
   Call<FakeApiTesting> fakeApiTester();

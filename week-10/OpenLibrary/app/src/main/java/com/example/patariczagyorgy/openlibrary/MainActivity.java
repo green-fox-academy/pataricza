@@ -14,7 +14,17 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void onClick(View view) {
-    Intent searchBySubject = new Intent(this, FakeApiTester.class);
+    Intent randomTextFromWeb = new Intent(this, FakeApiTester.class);
+    startActivity(randomTextFromWeb);
+  }
+
+  public void searchBySubject(View view) {
+    Intent searchBySubject = new Intent(this, SearchBookBySubject.class);
     startActivity(searchBySubject);
+  }
+
+  public void recycleView(View view) {
+    Intent recycleView = new Intent(this, RecyleViewPractice.class);
+    startActivity(recycleView);
   }
 }
