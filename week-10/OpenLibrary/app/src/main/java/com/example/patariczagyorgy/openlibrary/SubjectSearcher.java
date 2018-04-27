@@ -1,5 +1,6 @@
 package com.example.patariczagyorgy.openlibrary;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,13 +34,16 @@ public class SubjectSearcher extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_subject_searcher);
 
+    Intent intent = getIntent();
+    String subject = intent.getStringExtra("subject");
+
     recyclerView = findViewById(R.id.subjectSearcher);
     layoutManager = new LinearLayoutManager(this);
     recyclerView.setLayoutManager(layoutManager);
     recyclerView.setHasFixedSize(true);
 
     OpenLibraryClient client = retrofitClient.getOpenLibraryImpl("http://openlibrary.org/");
-    Call<Library> call = client.getBooksBySubject("fiction");
+    Call<Library> call = client.getBooksBySubject(subject);
 
     call.enqueue(new Callback<Library>() {
       @Override
