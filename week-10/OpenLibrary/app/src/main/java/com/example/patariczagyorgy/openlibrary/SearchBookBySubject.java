@@ -2,7 +2,9 @@ package com.example.patariczagyorgy.openlibrary;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -20,6 +22,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SearchBookBySubject extends AppCompatActivity {
+
+  List<String> bookBodies;
+  private static List<String> KEYWORDCONTAININGBODIES = new ArrayList<>();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +44,13 @@ public class SearchBookBySubject extends AppCompatActivity {
       @Override
       public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
         List<Book> books = response.body();
-        List<String> bookBodies = new ArrayList<>();
-        for (Book oneBook : books) {
-          bookBodies.add(oneBook.getBody());
+        bookBodies = new ArrayList<>();
+        if (KEYWORDCONTAININGBODIES.isEmpty()) {
+          for (Book oneBook : books) {
+            bookBodies.add(oneBook.getBody());
+          }
+        } else {
+          bookBodies.addAll(KEYWORDCONTAININGBODIES);
         }
         ListAdapter bookadapter = new ArrayAdapter<String>(SearchBookBySubject.this, android.R.layout.simple_list_item_1, bookBodies);
         ListView bookListView = (ListView) findViewById(R.id.bookList);
@@ -55,5 +64,26 @@ public class SearchBookBySubject extends AppCompatActivity {
         Toast.makeText(SearchBookBySubject.this, "Something went wrong", Toast.LENGTH_SHORT).show();
       }
     });
+  }
+
+  public void searchKeyword(View view) {
+    EditText editText = (EditText) findViewById(R.id.keyword);
+    String keyword = editText.getText().toString();
+
+    for (String bookBody : bookBodies) {
+      if (bookBody.contains(keyword)) {
+        KEYWORDCONTAININGBODIES.add(bookBody);
+      }
+    }
+
+    finish();
+    startActivity(getIntent());
+  }
+
+  public void clearSearch(View view) {
+    KEYWORDCONTAININGBODIES.clear();
+
+    finish();
+    startActivity(getIntent());
   }
 }
