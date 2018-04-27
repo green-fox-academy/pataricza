@@ -3,6 +3,7 @@ package com.example.patariczagyorgy.openlibrary;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListAdapter;
@@ -30,6 +31,8 @@ public class SearchBookBySubject extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_search_books_by_subject);
+
+    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
     Retrofit.Builder builder = new Retrofit.Builder()
         .baseUrl("https://jsonplaceholder.typicode.com/")
