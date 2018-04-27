@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,5 +27,13 @@ public class MainActivity extends AppCompatActivity {
   public void recycleView(View view) {
     Intent recycleView = new Intent(this, RecyleViewPractice.class);
     startActivity(recycleView);
+  }
+
+  public void subjectSearcher(View view) {
+    Intent subjectSearcher = new Intent(this, SubjectSearcher.class);
+    EditText editText = (EditText) findViewById(R.id.editText);
+    String subject = editText.getText().toString();
+    subjectSearcher.putExtra("subject", subject);
+    startActivity(subjectSearcher);
   }
 }
